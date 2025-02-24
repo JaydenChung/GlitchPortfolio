@@ -18,7 +18,7 @@ interface HomeProps {
 const Home = ({
   developerName = "Jayden Chung",
   developerTitle = "Full Stack Developer",
-  avatarUrl = "https://images.unsplash.com/photo-1568602471122-7832951cc4c5",
+  avatarUrl = "/profile.jpg",
 }: HomeProps) => {
   return (
     <motion.div

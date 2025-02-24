@@ -18,26 +18,28 @@ interface ExperienceTimelineProps {
 const ExperienceTimeline = ({
   items = [
     {
+      year: "2024",
+      company: "Samsung Research America",
+      role: "Game Development Intern",
+      description: `• Contributed to AI-driven features for Samsung Gaming Hub, enhancing user experience through personalized game recommendations
+• Implemented ML model for player behavior analysis, improving recommendation accuracy by 20%
+• Optimized backend systems in C++ and Python to reduce game streaming latency`,
+      technologies: [
+        "C++",
+        "Python",
+        "Machine Learning",
+        "Game Development",
+        "AI",
+      ],
+    },
+    {
       year: "2023",
-      company: "Tech Corp",
-      role: "Senior Developer",
-      description:
-        "Led development of core platform features and mentored junior developers.",
-      technologies: ["React", "TypeScript", "Node.js"],
-    },
-    {
-      year: "2021",
-      company: "StartUp Inc",
-      role: "Full Stack Developer",
-      description: "Built and maintained multiple client-facing applications.",
-      technologies: ["Vue.js", "Python", "AWS"],
-    },
-    {
-      year: "2019",
-      company: "Digital Agency",
-      role: "Frontend Developer",
-      description: "Created responsive web applications for various clients.",
-      technologies: ["JavaScript", "HTML", "CSS"],
+      company: "Tenants Lawfirm",
+      role: "Software Engineer Intern",
+      description: `• Designed Python script for PDF to .exe conversion with dynamic text content editing
+• Enhanced Squarespace website functionality using Google API and optimized SEO
+• Automated DocuSign templates to improve document signing efficiency`,
+      technologies: ["Python", "Google API", "Squarespace", "DocuSign", "SEO"],
     },
   ],
 }: ExperienceTimelineProps) => {
@@ -109,7 +111,9 @@ const ExperienceTimeline = ({
                       </span>
                     </div>
 
-                    <p className="text-foreground mb-4">{item.description}</p>
+                    <p className="text-purple-200 whitespace-pre-line leading-relaxed mb-4">
+                      {item.description}
+                    </p>
 
                     <div className="flex flex-wrap gap-2">
                       {item.technologies.map((tech, techIndex) => (

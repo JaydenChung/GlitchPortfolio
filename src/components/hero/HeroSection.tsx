@@ -14,7 +14,7 @@ interface HeroSectionProps {
 const HeroSection = ({
   name = "Jayden Chung",
   title = "Full Stack Developer",
-  avatarUrl = "https://images.unsplash.com/photo-1568602471122-7832951cc4c5",
+  avatarUrl = "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix",
 }: HeroSectionProps) => {
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center bg-black overflow-hidden">
