@@ -48,7 +48,7 @@ export const MatrixRain = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none opacity-10 z-20"
+      className="fixed inset-0 pointer-events-none opacity-10 z-10"
     />
   );
 };

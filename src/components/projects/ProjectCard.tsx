@@ -16,6 +16,7 @@ interface ProjectCardProps {
   title?: string;
   description?: string;
   imageUrl?: string;
+  videoUrl?: string;
   demoUrl?: string;
   githubUrl?: string;
   technologies?: string[];
@@ -25,6 +26,7 @@ const ProjectCard = ({
   title = "Project Title",
   description = "A brief description of the project and its key features. This is a placeholder text that should be replaced with actual project details.",
   imageUrl = "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+  videoUrl,
   demoUrl = "https://example.com",
   githubUrl = "https://github.com",
   technologies = ["React", "TypeScript", "Tailwind CSS"],
@@ -34,10 +36,10 @@ const ProjectCard = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       whileHover={{ scale: 1.02 }}
-      className="relative w-[380px] bg-black"
+      className="relative w-[380px]"
     >
       <Card
-        className="group overflow-hidden h-[420px] transition-all duration-300 bg-black/50 backdrop-blur-sm relative"
+        className="group overflow-hidden h-[420px] transition-all duration-300 bg-black/80 backdrop-blur-sm relative"
         style={{
           clipPath:
             "polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%)",
@@ -63,11 +65,41 @@ const ProjectCard = ({
         <div className="relative z-10 bg-black h-full m-[1px]">
           <CardHeader className="p-0">
             <div className="relative h-48 overflow-hidden">
-              <GlitchImage
-                src={imageUrl}
-                alt={title}
-                className="absolute inset-0"
-              />
+              {videoUrl ? (
+                <div className="relative group cursor-pointer">
+                  <iframe
+                    src={videoUrl}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                    style={{ pointerEvents: "none" }}
+                  />
+                  <div
+                    className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100"
+                    onClick={() =>
+                      window.open(
+                        videoUrl.replace("autoplay=1&loop=1&muted=1", ""),
+                        "_blank",
+                      )
+                    }
+                  >
+                    <Button
+                      variant="outline"
+                      className="border-purple-500 text-purple-400 hover:bg-purple-500/20 hover:text-purple-300 transition-colors"
+                    >
+                      Watch Fullscreen
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <GlitchImage
+                  src={imageUrl}
+                  alt={title}
+                  className="absolute inset-0"
+                />
+              )}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"
                 animate={{
@@ -148,7 +180,7 @@ const ProjectCard = ({
                 onClick={() => window.open(demoUrl, "_blank")}
               >
                 <ExternalLink className="w-4 h-4 mr-2" />
-                Demo
+                Play Game
               </Button>
             </div>
           </CardFooter>
