@@ -14,7 +14,7 @@ interface HeroSectionProps {
 const HeroSection = ({
   name = "Jayden Chung",
   title = "Full Stack Developer",
-  avatarUrl = "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix",
+  avatarUrl = "/Linkedin.jpg",
 }: HeroSectionProps) => {
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center bg-black overflow-hidden">
@@ -69,7 +69,9 @@ const HeroSection = ({
           transition={{ delay: 0.6 }}
         >
           <button className="px-8 py-3 text-lg font-semibold text-white bg-transparent border-2 border-cyan-500 rounded-lg hover:bg-cyan-500/20 transition-colors duration-300 relative group">
-            <span className="relative z-10">Explore My Work</span>
+            <span className="relative z-10">I'm a developer and designer who loves building and pushing the bounds of creativity!<br />
+            I enjoy bringing websites, apps, and video games to life. I make experiences <br />            
+            people genuinely connect with and see possibilities where others see limitations.  </span>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-fuchsia-500/20 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
         </motion.div>

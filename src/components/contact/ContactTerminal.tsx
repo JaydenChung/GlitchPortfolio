@@ -21,14 +21,18 @@ const ContactTerminal = ({
       "experience",
       `Experience Highlights:
 
-🔹 Senior Developer at Tech Corp (2023)
-   - Led development of core platform features
-   - Mentored junior developers
-   - Tech: React, TypeScript, Node.js
+🔹 Game Development Intern at Samsung Research America (2024)
+   - Contributed to AI-driven features for Samsung Gaming Hub, enhancing user experience
+   - Implemented ML model for player behavior analysis, improving recommendation accuracy
+   - Optimized backend systems in C++ and Python to reduce game streaming latency
+   - Tech: C++, Python, Node.js
 
-🔹 Full Stack Developer at StartUp Inc (2021)
+🔹 Software Engineer Intern at Tenants Lawfirm (2023)
    - Built client-facing applications
-   - Tech: Vue.js, Python, AWS`,
+   - Designed python scripts for PDF parsing
+   - Enhanced Website functionality
+   - Automated docusign templates
+   - Tech: Google API, Python, SEO`,
     );
 
     const element = document.getElementById("experience");
@@ -42,15 +46,19 @@ const ContactTerminal = ({
       "projects",
       `Featured Projects:
 
-🚀 AI Analytics Dashboard
-   - Real-time data visualization
-   - Machine learning integration
-   - React, TensorFlow.js, D3.js
+      PickmeGPT
+   - AI powered chatbot
+   - React, node.js, Typescript, CSS
 
-💻 E-Commerce Platform
-   - Next.js, GraphQL, Stripe
-   - Real-time inventory
-   - AI recommendations`,
+      Desert Apocalypse
+   - Unity project lead
+   - Unity, C#, Animations, Video editing
+   
+      SlugLove
+    - UCSC hackathon winner
+    - React, Firebase, CSS, Construct 3`
+   ,
+   
     );
 
     const element = document.getElementById("projects");
@@ -64,20 +72,21 @@ const ContactTerminal = ({
       "skills",
       `Technical Skills:
 
-🔹 Frontend: React, TypeScript, Next.js
-🔹 Backend: Node.js, Python, Express
-🔹 Database: PostgreSQL, MongoDB
+🔹 Frontend: React, TypeScript, CSS
+🔹 Backend: Node.js, Python, C++, C#, JavaScript
 🔹 Cloud: AWS, Vercel, Netlify
-🔹 Tools: Git, Docker, Jest`,
+🔹 Engines: Unity, Unreal Engine  `,
     );
   };
 
   const handleContactClick = () => {
     addMessage(
       "contact",
-      `📧 Email: jayden.chung@example.com
-📱 Phone: (555) 123-4567
-📍 Location: San Francisco, CA`,
+      `📧 Email: 03.jayden@gmail.com
+📱 Phone: 310-428-6793
+📍 Location: Los Angeles, CA
+   Github: https://github.com/JaydenChung
+   Linkedin: https://www.linkedin.com/in/jayden-chung-1ba694266/`,
     );
   };
 

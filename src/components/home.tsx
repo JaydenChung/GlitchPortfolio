@@ -18,7 +18,7 @@ interface HomeProps {
 const Home = ({
   developerName = "Jayden Chung",
   developerTitle = "Full Stack Developer",
-  avatarUrl = "/profile.jpg",
+  avatarUrl = "/Linkedin.jpg",
 }: HomeProps) => {
   return (
     <motion.div

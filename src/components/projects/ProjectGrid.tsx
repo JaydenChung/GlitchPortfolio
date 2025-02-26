@@ -7,6 +7,7 @@ interface Project {
   description: string;
   imageUrl?: string;
   videoUrl?: string;
+  websiteUrl?: string;
   demoUrl: string;
   githubUrl: string;
   technologies: string[];
@@ -27,7 +28,7 @@ const ProjectGrid = ({ projects = defaultProjects }: ProjectGridProps) => {
       <div className="max-w-7xl mx-auto">
         <motion.h2
           className="text-4xl font-bold text-primary mb-8 text-center"
-          initial={{ y: 20, opacity: 0 }}
+          initial={{ y: 20, opacity: 0 }} 
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
@@ -58,18 +59,18 @@ const ProjectGrid = ({ projects = defaultProjects }: ProjectGridProps) => {
 
 const defaultProjects: Project[] = [
   {
-    title: "AI-Powered Analytics Dashboard",
+    title: "PickmeGPT",
     description:
-      "A real-time analytics platform with machine learning capabilities for predictive insights and data visualization.",
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-    demoUrl: "https://example.com/demo1",
-    githubUrl: "https://github.com/example/project1",
-    technologies: ["React", "TypeScript", "TensorFlow.js", "D3.js"],
+      "An AI powered chatbot that expresses insecurities and seeks reassurance. Uses open AI's API to generate contexual responses as a sensitive person.",
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+    demoUrl: "https://pickmegpt.com/",
+    githubUrl: "https://github.com/example/project3",
+    technologies: ["Vue.js", "Node.js", "MongoDB", "Redis"],
   },
   {
     title: "Desert Apocalypse",
     description:
-      "A thrilling 2D platformer game where you navigate through a post-apocalyptic desert, fighting enemies and collecting resources to survive. Features dynamic combat, resource management, and challenging platforming mechanics.",
+      "A tower defense game where you fight through a post-apocalyptic desert, fighting enemies to survive. Features dynamic combat and unique camera movement.",
     videoUrl:
       "https://player.vimeo.com/video/1039308803?autoplay=1&loop=1&muted=1",
     demoUrl: "https://jaydumwum.itch.io/desertapocalypse",
@@ -77,13 +78,13 @@ const defaultProjects: Project[] = [
     technologies: ["Unity", "C#", "2D Game Development", "Pixel Art"],
   },
   {
-    title: "Social Media Dashboard",
+    title: "Slug Love",
     description:
-      "A comprehensive social media management tool with advanced analytics and automated posting features.",
-    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-    demoUrl: "https://example.com/demo3",
-    githubUrl: "https://github.com/example/project3",
-    technologies: ["Vue.js", "Node.js", "MongoDB", "Redis"],
+      "An interactive website designed to help students connect with others. Built dynamic UI, live chat room, and gram building game ",
+    websiteUrl: "https://sluglove.netlify.app/",
+    demoUrl: "https://sluglove.netlify.app/",
+    githubUrl: "https://github.com/example/project1",
+    technologies: ["React", "TypeScript", "TensorFlow.js", "D3.js"],
   },
 ];
 

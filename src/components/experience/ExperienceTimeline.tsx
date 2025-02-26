@@ -120,7 +120,7 @@ const ExperienceTimeline = ({
                         <Badge
                           key={techIndex}
                           variant="outline"
-                          className="border-cyan-500/50 hover:bg-cyan-500/20 hover:text-cyan-300 transition-colors"
+                          className="border-cyan-500/50 text-purple-200 whitespace-pre-line leading-relaxed mb-4"
                         >
                           {tech}
                         </Badge>

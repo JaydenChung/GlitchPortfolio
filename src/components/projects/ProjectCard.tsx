@@ -17,6 +17,7 @@ interface ProjectCardProps {
   description?: string;
   imageUrl?: string;
   videoUrl?: string;
+  websiteUrl?: string;
   demoUrl?: string;
   githubUrl?: string;
   technologies?: string[];
@@ -27,6 +28,7 @@ const ProjectCard = ({
   description = "A brief description of the project and its key features. This is a placeholder text that should be replaced with actual project details.",
   imageUrl = "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
   videoUrl,
+  websiteUrl,
   demoUrl = "https://example.com",
   githubUrl = "https://github.com",
   technologies = ["React", "TypeScript", "Tailwind CSS"],
@@ -63,48 +65,36 @@ const ProjectCard = ({
 
         {/* Inner Content with Dark Background */}
         <div className="relative z-10 bg-black h-full m-[1px]">
-          <CardHeader className="p-0">
-            <div className="relative h-48 overflow-hidden">
-              {videoUrl ? (
-                <iframe
-                  src={videoUrl}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                />
-              ) : (
-                <GlitchImage
-                  src={imageUrl}
-                  alt={title}
-                  className="absolute inset-0"
-                />
-              )}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"
-                animate={{
-                  opacity: [0.6, 0.8, 0.6],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                }}
-              />
-              {/* Scanline Effect */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/10 to-transparent"
-                style={{ height: "2px" }}
-                animate={{
-                  y: ["-100%", "200%"],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              />
-            </div>
-          </CardHeader>
+            <CardHeader className="p-0">
+      <div className="relative h-48 overflow-hidden">
+        {videoUrl ? (
+          <iframe
+            src={videoUrl}
+            className="absolute inset-0 w-full h-full object-cover"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+          />
+        ) : websiteUrl ? (
+          <iframe
+            src={websiteUrl}
+            className="absolute inset-0 w-full h-full rounded-md border-none"
+          />
+        ) : (
+          <GlitchImage
+            src={imageUrl}
+            alt={title}
+            className="absolute inset-0"
+          />
+        )}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"
+          animate={{ opacity: [0.6, 0.8, 0.6] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
+      </div>
+    </CardHeader>
+
 
           <CardContent className="p-6 relative">
             <motion.div
@@ -147,14 +137,14 @@ const ProjectCard = ({
 
           <CardFooter className="absolute bottom-0 left-0 right-0 p-6 border-t border-purple-500/20 bg-black/80 backdrop-blur-sm">
             <div className="flex justify-between w-full gap-4">
-              <Button
+              {/* <Button
                 variant="outline"
                 className="flex-1 border-purple-500 text-purple-400 hover:bg-purple-500/20 hover:text-purple-300 transition-colors"
                 onClick={() => window.open(githubUrl, "_blank")}
               >
                 <Github className="w-4 h-4 mr-2" />
                 Code
-              </Button>
+              </Button> */}
               <Button
                 className="flex-1 bg-purple-500 hover:bg-purple-600 text-white transition-colors"
                 onClick={() => window.open(demoUrl, "_blank")}
