@@ -36,10 +36,10 @@ const ProjectCard = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       whileHover={{ scale: 1.02 }}
-      className="relative w-[380px]"
+      className="relative w-[380px] bg-black"
     >
       <Card
-        className="group overflow-hidden h-[420px] transition-all duration-300 bg-black/80 backdrop-blur-sm relative"
+        className="group overflow-hidden h-[420px] transition-all duration-300 bg-black/50 backdrop-blur-sm relative"
         style={{
           clipPath:
             "polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%)",
@@ -66,33 +66,13 @@ const ProjectCard = ({
           <CardHeader className="p-0">
             <div className="relative h-48 overflow-hidden">
               {videoUrl ? (
-                <div className="relative group cursor-pointer">
-                  <iframe
-                    src={videoUrl}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                    style={{ pointerEvents: "none" }}
-                  />
-                  <div
-                    className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100"
-                    onClick={() =>
-                      window.open(
-                        videoUrl.replace("autoplay=1&loop=1&muted=1", ""),
-                        "_blank",
-                      )
-                    }
-                  >
-                    <Button
-                      variant="outline"
-                      className="border-purple-500 text-purple-400 hover:bg-purple-500/20 hover:text-purple-300 transition-colors"
-                    >
-                      Watch Fullscreen
-                    </Button>
-                  </div>
-                </div>
+                <iframe
+                  src={videoUrl}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                />
               ) : (
                 <GlitchImage
                   src={imageUrl}

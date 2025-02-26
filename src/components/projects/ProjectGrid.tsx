@@ -71,7 +71,7 @@ const defaultProjects: Project[] = [
     description:
       "A thrilling 2D platformer game where you navigate through a post-apocalyptic desert, fighting enemies and collecting resources to survive. Features dynamic combat, resource management, and challenging platforming mechanics.",
     videoUrl:
-      "https://player.vimeo.com/video/913908803?autoplay=1&loop=1&muted=1&background=1",
+      "https://player.vimeo.com/video/1039308803?autoplay=1&loop=1&muted=1",
     demoUrl: "https://jaydumwum.itch.io/desertapocalypse",
     githubUrl: "https://github.com/yourusername/desert-apocalypse",
     technologies: ["Unity", "C#", "2D Game Development", "Pixel Art"],
