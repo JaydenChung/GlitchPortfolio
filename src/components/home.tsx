@@ -3,6 +3,7 @@ import { NoiseOverlay } from "./effects/NoiseOverlay";
 import { MatrixRain } from "./effects/MatrixRain";
 import { CircuitPattern } from "./effects/CircuitPattern";
 import { ScanLines } from "./effects/ScanLines";
+import { ThreeBackground } from "./effects/ThreeBackground";
 import { motion } from "framer-motion";
 import HeroSection from "./hero/HeroSection";
 import ExperienceTimeline from "./experience/ExperienceTimeline";
@@ -27,6 +28,7 @@ const Home = ({
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
+      <ThreeBackground color="#800080" />
       <CircuitPattern />
       <MatrixRain />
       <NoiseOverlay />
@@ -73,10 +75,6 @@ const Home = ({
       >
         <ContactTerminal
           initialMessage={`Welcome to ${developerName}'s terminal. How can I help you today?`}
-          onSubmit={(message) => {
-            console.log("Message received:", message);
-            // Handle contact form submission here
-          }}
         />
       </motion.section>
 

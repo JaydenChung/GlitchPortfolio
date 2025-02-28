@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { ThreeDCard } from "../effects/ThreeDCard";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -65,70 +66,72 @@ const ExperienceTimeline = ({
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Card
-                className="relative ml-6 hover:shadow-lg transition-shadow border-cyan-500 bg-black/50 backdrop-blur-sm overflow-hidden"
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  e.currentTarget.style.setProperty("--mouse-x", `${x}px`);
-                  e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
-                }}
-              >
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    background:
-                      "radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(0, 255, 255, 0.06), transparent 40%)",
+              <ThreeDCard>
+                <Card
+                  className="relative ml-6 hover:shadow-lg transition-shadow border-cyan-500 bg-black/50 backdrop-blur-sm overflow-hidden"
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    e.currentTarget.style.setProperty("--mouse-x", `${x}px`);
+                    e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
                   }}
-                />
-                {/* Timeline dot */}
-                <div className="absolute -left-9 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(0,255,255,0.5)]" />
-
-                <CardContent className="p-6">
-                  <motion.div
-                    whileHover={{
-                      filter: [
-                        "brightness(1)",
-                        "brightness(1.2)",
-                        "brightness(1)",
-                      ],
-                      transition: {
-                        duration: 0.2,
-                        repeat: Infinity,
-                      },
+                >
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{
+                      background:
+                        "radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(0, 255, 255, 0.06), transparent 40%)",
                     }}
-                  >
-                    <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                      <div>
-                        <h3 className="text-xl font-bold text-cyan-500">
-                          {item.role}
-                        </h3>
-                        <p className="text-cyan-300/70">{item.company}</p>
+                  />
+                  {/* Timeline dot */}
+                  <div className="absolute -left-9 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(0,255,255,0.5)]" />
+
+                  <CardContent className="p-6">
+                    <motion.div
+                      whileHover={{
+                        filter: [
+                          "brightness(1)",
+                          "brightness(1.2)",
+                          "brightness(1)",
+                        ],
+                        transition: {
+                          duration: 0.2,
+                          repeat: Infinity,
+                        },
+                      }}
+                    >
+                      <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <div>
+                          <h3 className="text-xl font-bold text-cyan-500">
+                            {item.role}
+                          </h3>
+                          <p className="text-cyan-300/70">{item.company}</p>
+                        </div>
+                        <span className="text-sm font-mono text-fuchsia-400 mt-2 md:mt-0">
+                          {item.year}
+                        </span>
                       </div>
-                      <span className="text-sm font-mono text-fuchsia-400 mt-2 md:mt-0">
-                        {item.year}
-                      </span>
-                    </div>
 
-                    <p className="text-purple-200 whitespace-pre-line leading-relaxed mb-4">
-                      {item.description}
-                    </p>
+                      <p className="text-purple-200 whitespace-pre-line leading-relaxed mb-4">
+                        {item.description}
+                      </p>
 
-                    <div className="flex flex-wrap gap-2">
-                      {item.technologies.map((tech, techIndex) => (
-                        <Badge
-                          key={techIndex}
-                          variant="outline"
-                          className="border-cyan-500/50 text-purple-200 whitespace-pre-line leading-relaxed mb-4"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </motion.div>
-                </CardContent>
-              </Card>
+                      <div className="flex flex-wrap gap-2">
+                        {item.technologies.map((tech, techIndex) => (
+                          <Badge
+                            key={techIndex}
+                            variant="outline"
+                            className="border-cyan-500/50 text-purple-200 whitespace-pre-line leading-relaxed mb-4"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </CardContent>
+                </Card>
+              </ThreeDCard>
             </motion.div>
           ))}
         </div>

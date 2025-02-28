@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { ThreeDCard } from "../effects/ThreeDCard";
 import { GlitchImage } from "../effects/GlitchImage";
 import {
   Card,
@@ -34,14 +35,9 @@ const ProjectCard = ({
   technologies = ["React", "TypeScript", "Tailwind CSS"],
 }: ProjectCardProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      whileHover={{ scale: 1.02 }}
-      className="relative w-[380px] bg-black"
-    >
+    <ThreeDCard className="relative w-[380px]">
       <Card
-        className="group overflow-hidden h-[420px] transition-all duration-300 bg-black/50 backdrop-blur-sm relative"
+        className="group overflow-hidden h-[420px] transition-all duration-300 bg-black/80 backdrop-blur-sm relative"
         style={{
           clipPath:
             "polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%)",
@@ -65,36 +61,37 @@ const ProjectCard = ({
 
         {/* Inner Content with Dark Background */}
         <div className="relative z-10 bg-black h-full m-[1px]">
-            <CardHeader className="p-0">
-      <div className="relative h-48 overflow-hidden">
-        {videoUrl ? (
-          <iframe
-            src={videoUrl}
-            className="absolute inset-0 w-full h-full object-cover"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-          />
-        ) : websiteUrl ? (
-          <iframe
-            src={websiteUrl}
-            className="absolute inset-0 w-full h-full rounded-md border-none"
-          />
-        ) : (
-          <GlitchImage
-            src={imageUrl}
-            alt={title}
-            className="absolute inset-0"
-          />
-        )}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"
-          animate={{ opacity: [0.6, 0.8, 0.6] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        />
-      </div>
-    </CardHeader>
-
+          <CardHeader className="p-0">
+            <div className="relative h-48 overflow-hidden">
+              {videoUrl ? (
+                <iframe
+                  src={videoUrl}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                  style={{ pointerEvents: "none" }}
+                />
+              ) : websiteUrl ? (
+                <iframe
+                  src={websiteUrl}
+                  className="absolute inset-0 w-full h-full rounded-md border-none"
+                />
+              ) : (
+                <GlitchImage
+                  src={imageUrl}
+                  alt={title}
+                  className="absolute inset-0"
+                />
+              )}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"
+                animate={{ opacity: [0.6, 0.8, 0.6] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+            </div>
+          </CardHeader>
 
           <CardContent className="p-6 relative">
             <motion.div
@@ -156,7 +153,7 @@ const ProjectCard = ({
           </CardFooter>
         </div>
       </Card>
-    </motion.div>
+    </ThreeDCard>
   );
 };
 
