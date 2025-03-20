@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ThreeDCard } from "../effects/ThreeDCard";
 import { GlitchImage } from "../effects/GlitchImage";
 import {
   Card,
@@ -35,9 +34,14 @@ const ProjectCard = ({
   technologies = ["React", "TypeScript", "Tailwind CSS"],
 }: ProjectCardProps) => {
   return (
-    <ThreeDCard className="relative w-[380px]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      whileHover={{ scale: 1.02 }}
+      className="relative w-full sm:w-[420px] bg-black"
+    >
       <Card
-        className="group overflow-hidden h-[420px] transition-all duration-300 bg-black/80 backdrop-blur-sm relative"
+        className="group overflow-hidden h-[480px] transition-all duration-300 bg-black/50 backdrop-blur-sm relative"
         style={{
           clipPath:
             "polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%)",
@@ -60,40 +64,44 @@ const ProjectCard = ({
         </div>
 
         {/* Inner Content with Dark Background */}
-        <div className="relative z-10 bg-black h-full m-[1px]">
-          <CardHeader className="p-0">
-            <div className="relative h-48 overflow-hidden">
+        <div className="relative z-10 bg-black h-full m-[1px] flex flex-col">
+          <CardHeader className="p-0 flex-shrink-0">
+            <div className="relative h-52 overflow-hidden">
               {videoUrl ? (
-                <iframe
-                  src={videoUrl}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                  style={{ pointerEvents: "none" }}
-                />
+                <div className="relative w-full h-full z-20">
+                  <iframe
+                    src={videoUrl}
+                    className="absolute inset-0 w-full h-full object-cover z-20"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
               ) : websiteUrl ? (
-                <iframe
-                  src={websiteUrl}
-                  className="absolute inset-0 w-full h-full rounded-md border-none"
-                />
+                <div className="relative w-full h-full z-20">
+                  <iframe
+                    src={websiteUrl}
+                    className="absolute inset-0 w-full h-full rounded-md border-none z-20"
+                  />
+                </div>
               ) : (
-                <GlitchImage
-                  src={imageUrl}
-                  alt={title}
-                  className="absolute inset-0"
-                />
+                <>
+                  <GlitchImage
+                    src={imageUrl}
+                    alt={title}
+                    className="absolute inset-0"
+                  />
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-10"
+                    animate={{ opacity: [0.6, 0.8, 0.6] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  />
+                </>
               )}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"
-                animate={{ opacity: [0.6, 0.8, 0.6] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
             </div>
           </CardHeader>
 
-          <CardContent className="p-6 relative">
+          <CardContent className="p-6 flex-grow flex flex-col">
             <motion.div
               animate={{
                 boxShadow: [
@@ -111,11 +119,11 @@ const ProjectCard = ({
                 {title}
               </CardTitle>
             </motion.div>
-            <CardDescription className="text-sm text-purple-200/70 line-clamp-3">
+            <CardDescription className="text-sm text-purple-200/70 mb-4">
               {description}
             </CardDescription>
 
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-auto flex flex-wrap gap-2">
               {technologies.map((tech, index) => (
                 <motion.span
                   key={index}
@@ -132,16 +140,8 @@ const ProjectCard = ({
             </div>
           </CardContent>
 
-          <CardFooter className="absolute bottom-0 left-0 right-0 p-6 border-t border-purple-500/20 bg-black/80 backdrop-blur-sm">
+          <CardFooter className="p-6 border-t border-purple-500/20 bg-black/80 backdrop-blur-sm flex-shrink-0">
             <div className="flex justify-between w-full gap-4">
-              {/* <Button
-                variant="outline"
-                className="flex-1 border-purple-500 text-purple-400 hover:bg-purple-500/20 hover:text-purple-300 transition-colors"
-                onClick={() => window.open(githubUrl, "_blank")}
-              >
-                <Github className="w-4 h-4 mr-2" />
-                Code
-              </Button> */}
               <Button
                 className="flex-1 bg-purple-500 hover:bg-purple-600 text-white transition-colors"
                 onClick={() => window.open(demoUrl, "_blank")}
@@ -153,7 +153,7 @@ const ProjectCard = ({
           </CardFooter>
         </div>
       </Card>
-    </ThreeDCard>
+    </motion.div>
   );
 };
 

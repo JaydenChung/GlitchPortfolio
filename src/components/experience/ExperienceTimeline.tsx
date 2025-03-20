@@ -18,21 +18,21 @@ interface ExperienceTimelineProps {
 
 const ExperienceTimeline = ({
   items = [
-    {
-      year: "2024",
-      company: "Samsung Research America",
-      role: "Game Development Intern",
-      description: `• Contributed to AI-driven features for Samsung Gaming Hub, enhancing user experience through personalized game recommendations
-• Implemented ML model for player behavior analysis, improving recommendation accuracy by 20%
-• Optimized backend systems in C++ and Python to reduce game streaming latency`,
-      technologies: [
-        "C++",
-        "Python",
-        "Machine Learning",
-        "Game Development",
-        "AI",
-      ],
-    },
+//     {
+//       year: "2024",
+//       company: "Samsung Research America",
+//       role: "Game Development Intern",
+//       description: `• Contributed to AI-driven features for Samsung Gaming Hub, enhancing user experience through personalized game recommendations
+// • Implemented ML model for player behavior analysis, improving recommendation accuracy by 20%
+// • Optimized backend systems in C++ and Python to reduce game streaming latency`,
+//       technologies: [
+//         "C++",
+//         "Python",
+//         "Machine Learning",
+//         "Game Development",
+//         "AI",
+//       ],
+//     },
     {
       year: "2023",
       company: "Tenants Lawfirm",

@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import HeroSection from "./hero/HeroSection";
 import ExperienceTimeline from "./experience/ExperienceTimeline";
 import ProjectGrid from "./projects/ProjectGrid";
+import DesignProjectsSection from "./projects/DesignProjectsSection";
 import ContactTerminal from "./contact/ContactTerminal";
 
 interface HomeProps {
@@ -53,7 +54,18 @@ const Home = ({
         <ExperienceTimeline />
       </motion.section>
 
-      {/* Projects Grid Section */}
+      {/* Design Projects Section */}
+      <motion.section
+        id="design-projects"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <DesignProjectsSection />
+      </motion.section>
+
+      {/* Technical Projects Grid Section */}
       <motion.section
         id="projects"
         initial={{ opacity: 0 }}

@@ -16,17 +16,15 @@ const ContactTerminal = ({
   const addMessage = (command: string, output: string) => {
     setMessages((prev) => [...prev, `> ${command}`, output]);
   };
-
+  // 🔹 Game Development Intern at Samsung Research America (2024)
+  // - Contributed to AI-driven features for Samsung Gaming Hub, enhancing user experience
+  // - Implemented ML model for player behavior analysis, improving recommendation accuracy
+  // - Optimized backend systems in C++ and Python to reduce game streaming latency
+  // - Tech: C++, Python, Node.js
   const handleExperienceClick = () => {
     addMessage(
       "experience",
       `Experience Highlights:
-
-🔹 Game Development Intern at Samsung Research America (2024)
-   - Contributed to AI-driven features for Samsung Gaming Hub, enhancing user experience
-   - Implemented ML model for player behavior analysis, improving recommendation accuracy
-   - Optimized backend systems in C++ and Python to reduce game streaming latency
-   - Tech: C++, Python, Node.js
 
 🔹 Software Engineer Intern at Tenants Lawfirm (2023)
    - Built client-facing applications

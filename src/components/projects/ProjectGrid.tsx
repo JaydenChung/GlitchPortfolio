@@ -28,11 +28,11 @@ const ProjectGrid = ({ projects = defaultProjects }: ProjectGridProps) => {
       <div className="max-w-7xl mx-auto">
         <motion.h2
           className="text-4xl font-bold text-primary mb-8 text-center"
-          initial={{ y: 20, opacity: 0 }} 
+          initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          Featured Projects
+          Technical Projects
         </motion.h2>
 
         <motion.div
@@ -68,12 +68,11 @@ const defaultProjects: Project[] = [
     technologies: ["Vue.js", "Node.js", "MongoDB", "Redis"],
   },
   {
-    title: "Desert Apocalypse",
+    title: "Duck Game",
     description:
-      "A tower defense game where you fight through a post-apocalyptic desert, fighting enemies to survive. Features dynamic combat and unique camera movement.",
-    videoUrl:
-      "https://player.vimeo.com/video/1039308803?autoplay=1&loop=1&muted=1",
-    demoUrl: "https://jaydumwum.itch.io/desertapocalypse",
+      "Helped create 2D animations for the Duck Game and created trailer using video editing software.",
+    videoUrl: "https://www.youtube.com/embed/K-dtFWg_cfY?",
+    demoUrl: "https://www.youtube.com/watch?v=K-dtFWg_cfY",
     githubUrl: "https://github.com/yourusername/desert-apocalypse",
     technologies: ["Unity", "C#", "2D Game Development", "Pixel Art"],
   },
