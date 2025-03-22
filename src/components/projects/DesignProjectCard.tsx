@@ -125,7 +125,7 @@ const DesignProjectCard = ({
             )}
           </div>
 
-          {/* Collapsible Screenshots and Process */}
+          {/* Improved Collapsible Screenshots and Process */}
           <Collapsible
             open={isOpen}
             onOpenChange={setIsOpen}
@@ -133,11 +133,11 @@ const DesignProjectCard = ({
           >
             <CollapsibleTrigger asChild>
               <Button
-                variant="ghost"
-                size="sm"
-                className="w-full flex items-center justify-between text-primary hover:text-primary/80 bg-primary/5 hover:bg-primary/10 transition-colors py-3"
+                variant="outline"
+                size="lg"
+                className="w-full flex items-center justify-center gap-2 text-white hover:text-white bg-primary hover:bg-primary/90 border-primary/50 hover:border-primary transition-all py-3 font-medium text-base rounded-md shadow-md shadow-primary/20"
               >
-                <span className="px-4 py-2 bg-primary/100 text-cyan-100 text-sm">PROJECT_DETAILS</span>
+                <span className="mr-2">VIEW PROJECT DETAILS</span>
                 {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
               </Button>
             </CollapsibleTrigger>
@@ -155,8 +155,8 @@ const DesignProjectCard = ({
 
               {/* Screenshots */}
               <div>
-                <h4 className="text-base font-semibold text-primary mb-4 font-mono tracking-wide">
-                  VISUAL_DATA
+                <h4 className="text-lg font-semibold text-primary mb-4 font-mono tracking-wide bg-primary/10 p-2 rounded border-l-4 border-primary">
+                  VISUAL DATA
                 </h4>
                 <div className="grid gap-8">
                   {screenshots.map((screenshot, index) => (

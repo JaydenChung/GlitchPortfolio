@@ -93,11 +93,11 @@ const defaultProjects: DesignProject[] = [
       "",
   },
   {
-    title: "Eco-Friendly App Concept",
+    title: "Desert Apocalypse Trailer",
     description:
       "",
     videoUrl:
-      "https://player.vimeo.com/video/1039308803?autoplay=1&loop=1",
+      "https://player.vimeo.com/video/1039308803?loop=1",
     technologies: ["Unreal Engine", "Capcut", "TikTok", "FL Studio"],
     screenshots: [
       {
@@ -117,7 +117,7 @@ const defaultProjects: DesignProject[] = [
     description:
       "Fullscreen 4K Reccomended",
     videoUrl:
-      "https://player.vimeo.com/video/1067622412?autoplay=1&loop=1",
+      "https://player.vimeo.com/video/1067622412?loop=1",
     technologies: ["Unity", "Premiere Pro", "AdobePhotoshop", "Github"],
     screenshots: [
       {
