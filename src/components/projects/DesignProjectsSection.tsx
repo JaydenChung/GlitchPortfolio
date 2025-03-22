@@ -76,16 +76,16 @@ const defaultProjects: DesignProject[] = [
     technologies: ["Adobe Photoshop", "Unreal Engine", "Blender"],
     screenshots: [
       {
-        url: "../public/Unreal.jpg",
+        url: "/Unreal.jpg",
         caption:
           "Designed a photorealistic automotive environment using HDRI lighting with Lumen illumination to render automotive materials with enhanced reflections and realism.",
       },
       {
-        url: "../public/Blender.png",
+        url: "/Blender.png",
         caption: "Imported high poly vehicle and assets from Blender. Seperated vehicle body, wheels and caliber to set up rigging and vehicle animation in UE5. Developed cinematic camera movements and dynamic lighting setups to create visually engaging sequences.",
       },
       {
-        url: "../public/Premiere.png",
+        url: "/Premiere.png",
         caption: "Edited and synchronized sound effects in Adobe Premiere Pro, refining audio transitions and enhancing the immersive experience. Utilized motion blur, depth of field, and post-processing color grading to achieve a professional-grade commercial look.",
       },
     ],
@@ -101,11 +101,11 @@ const defaultProjects: DesignProject[] = [
     technologies: ["Unreal Engine", "Capcut", "TikTok", "FL Studio"],
     screenshots: [
       {
-        url: "../public/Unity.png",
+        url: "/Unity.png",
         caption: "Directed and edited a high-impact game trailer for Desert Apocalypse, capturing the game's post-apocalyptic tone and dynamic gameplay. Designed and implemented dramatic camera movements, smooth transitions, and visual storytelling techniques to engage viewers.",
       },
       {
-        url: "../public/Unity2.png",
+        url: "/Unity2.png",
         caption: "Designed and Programmed functionality in Unity and published on my itch.io page! Features unique combat and camera movement.",
       },
     ],
@@ -121,11 +121,11 @@ const defaultProjects: DesignProject[] = [
     technologies: ["Unity", "Premiere Pro", "AdobePhotoshop", "Github"],
     screenshots: [
       {
-        url: "../public/AMG1.png",
+        url: "/AMG1.png",
         caption: "Produced a high-engagement TikTok video showcasing a car, leveraging dynamic cinematography and short-form storytelling. Enhance visuals, add text overlays, and sync music with car movements for maximum impact." ,
       },
       {
-        url: "../public/AMG2.png",
+        url: "/AMG2.png",
         caption: "Applied fast paced editing techniques and high renderes with pathtracing to calculate realistic light reflections.",
       },
     ],
