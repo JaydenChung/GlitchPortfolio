@@ -125,6 +125,18 @@ const DesignProjectCard = ({
             )}
           </div>
 
+          {/* Play Game Button for Desert Apocalypse */}
+          {title === "Desert Apocalypse Trailer" && (
+            <a
+              href="https://jaydumwum.itch.io/desertapocalypse"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-2 text-white hover:text-white bg-green-600 hover:bg-green-700 border-green-500 hover:border-green-600 transition-all py-3 font-medium text-base rounded-md shadow-md shadow-green-500/20 mb-4"
+            >
+              PLAY GAME
+            </a>
+          )}
+
           {/* Improved Collapsible Screenshots and Process */}
           <Collapsible
             open={isOpen}
@@ -145,8 +157,7 @@ const DesignProjectCard = ({
               {/* Process Description */}
               {process && (
                 <div className="mb-6">
-                  <h4 className="text-base font-semibold text-primary mb-3 font-mono tracking-wide">
-                  </h4>
+                  <h4 className="text-base font-semibold text-primary mb-3 font-mono tracking-wide"></h4>
                   <p className="text-cyan-100 text-base leading-relaxed border-l-2 border-primary/30 pl-4">
                     {process}
                   </p>
