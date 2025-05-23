@@ -102,7 +102,7 @@ const defaultProjects: DesignProject[] = [
       {
         url: "/Storm.mp4",
         caption:
-          "Designed and Programmed functionality in Unity and published on my itch.io page! Features unique combat and camera movement.",
+          "Worked on early stage prtotyping then focused on leading the team throguh SCRUM meetings and managing the project timeline. ",
       },
     ],
     process: "",
