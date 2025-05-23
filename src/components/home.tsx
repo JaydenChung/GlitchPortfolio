@@ -18,7 +18,7 @@ interface HomeProps {
 
 const Home = ({
   developerName = "Jayden Chung",
-  developerTitle = "Designer & Developer",
+  developerTitle = "Developer",
   avatarUrl = "/Linkedin.jpg",
 }: HomeProps) => {
   return (
