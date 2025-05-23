@@ -2,18 +2,19 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface GlitchImageProps {
-  src: string;
-  alt: string;
+  src?: string;
+  alt?: string;
   className?: string;
 }
 
 export const GlitchImage = ({ src, alt, className = "" }: GlitchImageProps) => {
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div className={`relative ${className}`}>
       <motion.img
         src={src}
         alt={alt}
-        className="relative z-10 w-full h-full object-cover"
+        className="w-full h-full"
+        style={{ objectFit: "contain", maxHeight: "400px" }}
         animate={{
           filter: [
             "hue-rotate(0deg) brightness(1) contrast(100%)",
@@ -28,19 +29,6 @@ export const GlitchImage = ({ src, alt, className = "" }: GlitchImageProps) => {
           duration: 0.2,
           repeat: Infinity,
           repeatType: "reverse",
-          repeatDelay: Math.random() * 5 + 2,
-        }}
-      />
-      <motion.div
-        className="absolute inset-0 bg-cyan-500/20"
-        animate={{
-          x: ["-100%", "100%"],
-          opacity: [0, 0.2, 0],
-        }}
-        transition={{
-          duration: 0.2,
-          repeat: Infinity,
-          repeatDelay: Math.random() * 5 + 2,
         }}
       />
     </div>

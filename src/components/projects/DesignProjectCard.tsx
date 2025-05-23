@@ -112,7 +112,7 @@ const DesignProjectCard = ({
                 href={websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 text-base font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-primary text-base font-medium"
               >
                 <ExternalLink size={16} className="text-primary/80" /> Website
               </a>
@@ -122,7 +122,7 @@ const DesignProjectCard = ({
                 href={demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 text-base font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-primary text-base font-medium"
               >
                 <ExternalLink size={16} className="text-primary/80" /> Demo
               </a>
@@ -132,7 +132,7 @@ const DesignProjectCard = ({
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 text-base font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-primary text-base font-medium"
               >
                 <Github size={16} className="text-primary/80" /> Code
               </a>
@@ -147,7 +147,7 @@ const DesignProjectCard = ({
                 : "https://jaydumwum.itch.io/desertapocalypse"}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 text-white hover:text-white bg-green-600 hover:bg-green-700 border-green-500 hover:border-green-600 transition-all py-3 font-medium text-base rounded-md shadow-md shadow-green-500/20 mb-4"
+              className="w-full flex items-center justify-center gap-2 text-white bg-green-600 border-green-500 py-3 font-medium text-base rounded-md shadow-md shadow-green-500/20 mb-4"
             >
               {title === "Ye Guild Clerk" ? "PLAY DEMO" : "PLAY GAME"}
             </a>
@@ -163,7 +163,7 @@ const DesignProjectCard = ({
               <Button
                 variant="outline"
                 size="lg"
-                className="w-full flex items-center justify-center gap-2 text-white hover:text-white bg-primary hover:bg-primary/90 border-primary/50 hover:border-primary transition-all py-3 font-medium text-base rounded-md shadow-md shadow-primary/20"
+                className="w-full flex items-center justify-center gap-2 text-white bg-primary border-primary/50 py-3 font-medium text-base rounded-md shadow-md shadow-primary/20"
               >
                 <span className="mr-2">VIEW PROJECT DETAILS</span>
                 {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
@@ -207,10 +207,9 @@ const DesignProjectCard = ({
                             <img
                               src={screenshot.url}
                               alt={`${title} screenshot ${index + 1}`}
-                              className="w-full rounded-md group-hover:scale-105 transition-transform duration-500"
+                              className="w-full rounded-md"
                               loading="lazy"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                           </>
                         )}
                         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/80 to-transparent"></div>
