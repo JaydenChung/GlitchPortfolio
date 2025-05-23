@@ -105,26 +105,26 @@ const defaultProjects: DesignProject[] = [
     process:
       "",
   },
-  {
-    title: "AMG GTR Short",
-    description:
-      "Fullscreen 4K Reccomended",
-    videoUrl:
-      "https://player.vimeo.com/video/1067622412?loop=1",
-    technologies: ["Unity", "Premiere Pro", "AdobePhotoshop", "Github"],
-    screenshots: [
-      {
-        url: "/AMG1.png",
-        caption: "Produced a high-engagement TikTok video showcasing a car, leveraging dynamic cinematography and short-form storytelling. Enhance visuals, add text overlays, and sync music with car movements for maximum impact." ,
-      },
-      {
-        url: "/AMG2.png",
-        caption: "Applied fast paced editing techniques and high renderes with pathtracing to calculate realistic light reflections.",
-      },
-    ],
-    process:
-      "",
-  },
+  // {
+  //   title: "AMG GTR Short",
+  //   description:
+  //     "Fullscreen 4K Reccomended",
+  //   videoUrl:
+  //     "https://player.vimeo.com/video/1067622412?loop=1",
+  //   technologies: ["Unity", "Premiere Pro", "AdobePhotoshop", "Github"],
+  //   screenshots: [
+  //     {
+  //       url: "/AMG1.png",
+  //       caption: "Produced a high-engagement TikTok video showcasing a car, leveraging dynamic cinematography and short-form storytelling. Enhance visuals, add text overlays, and sync music with car movements for maximum impact." ,
+  //     },
+  //     {
+  //       url: "/AMG2.png",
+  //       caption: "Applied fast paced editing techniques and high renderes with pathtracing to calculate realistic light reflections.",
+  //     },
+  //   ],
+  //   process:
+  //     "",
+  // },
   
 ];
 

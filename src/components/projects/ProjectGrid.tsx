@@ -65,6 +65,7 @@ const defaultProjects: Project[] = [
     title: "SlugLove - Secret Prize Winner #2 🎁",
     imageUrl: "/SLugLove.png",
     websiteUrl: "https://sluglove.netlify.app/",
+    githubUrl: "https://github.com/jaydumwum/SlugLove",
     devpostUrl: "https://devpost.com/software/sluglove",
   },
 ];
