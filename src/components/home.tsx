@@ -5,6 +5,7 @@ import { ThreeBackground } from "./effects/ThreeBackground";
 import { motion } from "framer-motion";
 import HeroSection from "./hero/HeroSection";
 import DemoReel from "./experience/ExperienceTimeline";
+import ExperienceSection from "./experience/ExperienceSection";
 import ProjectGrid from "./projects/ProjectGrid";
 import DesignProjectsSection from "./projects/DesignProjectsSection";
 import ContactTerminal from "./contact/ContactTerminal";
@@ -51,9 +52,22 @@ const Home = ({
         <DemoReel />
       </motion.section>
 
+      {/* Experience Section */}
+      <motion.section
+        id="experience"
+        className="relative isolate pb-16"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <ExperienceSection />
+      </motion.section>
+
       {/* Design Projects Section */}
       <motion.section
         id="design-projects"
+        className="pt-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

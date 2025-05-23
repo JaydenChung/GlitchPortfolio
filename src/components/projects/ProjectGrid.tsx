@@ -66,6 +66,7 @@ const defaultProjects: Project[] = [
     imageUrl: "/SLugLove.png",
     websiteUrl: "https://sluglove.netlify.app/",
     devpostUrl: "https://devpost.com/software/sluglove",
+    githubUrl: "https://github.com/deborachoi3/SlugLove-CruzHacks-2023-",
   },
 ];
 
