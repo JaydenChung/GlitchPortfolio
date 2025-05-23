@@ -76,33 +76,36 @@ const defaultProjects: DesignProject[] = [
     screenshots: [
       {
         url: "/Ye Guild Clerk1.png",
-        caption: "I created and managed social media accounts for the game, and gathered an audiece from the ground up through trailers and prmotional videos. Responsible for overseeing the game's Steam page and approving the final build for release.", 
+        caption:
+          "I created and managed social media accounts for the game, and gathered an audiece from the ground up through trailers and prmotional videos. Responsible for overseeing the game's Steam page and approving the final build for release.",
       },
       {
-        documentUrl: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/OugY0hKJxNxQVhJQoCAo6e/Ye-Guild-Clerk-Flow-Chart-?type=whiteboard",
-        caption: "Game flow chart and design documentation showcasing the core gameplay interactions and systems.",
-      }
+        documentUrl:
+          "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/OugY0hKJxNxQVhJQoCAo6e/Ye-Guild-Clerk-Flow-Chart-?type=whiteboard",
+        caption:
+          "Game flow chart and design documentation showcasing the core gameplay interactions and systems.",
+      },
     ],
     process: "",
   },
   {
     title: "Storm Base",
     description: "Producer",
-    videoUrl:
-      "https://player.vimeo.com/video/1039308803?loop=1",
-    technologies: ["Unity", "C#", "Trello", "AdobeSuite", ],
+    videoUrl: "https://player.vimeo.com/video/1039308803?loop=1",
+    technologies: ["Unity", "C#", "Trello", "AdobeSuite"],
     screenshots: [
       {
         url: "/Unity.png",
-        caption: "Conceptulized and designed a game in Unity, focusing on the core gameplay loop and mechanics. I was responsible for the overall game design and project management, ensuring that the game was created in a timely fashion and met quality standards.",
+        caption:
+          "Conceptulized and designed a game in Unity, focusing on the core gameplay loop and mechanics. I was responsible for the overall game design and project management, ensuring that the game was created in a timely fashion and met quality standards.",
       },
       {
         url: "/Storm.mp4",
-        caption: "Designed and Programmed functionality in Unity and published on my itch.io page! Features unique combat and camera movement.",
+        caption:
+          "Designed and Programmed functionality in Unity and published on my itch.io page! Features unique combat and camera movement.",
       },
     ],
-    process:
-      "",
+    process: "",
   },
   // {
   //   title: "AMG GTR Short",
@@ -124,7 +127,6 @@ const defaultProjects: DesignProject[] = [
   //   process:
   //     "",
   // },
-  
 ];
 
 export default DesignProjectsSection;

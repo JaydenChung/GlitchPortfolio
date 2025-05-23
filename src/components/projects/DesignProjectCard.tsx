@@ -61,15 +61,27 @@ const DesignProjectCard = ({
               title={`${title} document`}
             />
           ) : videoUrl ? (
-            <iframe
-              src={videoUrl}
-              className="absolute inset-0 w-full h-full"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-              title={title}
-            />
+            videoUrl.includes("http") ? (
+              <iframe
+                src={videoUrl}
+                className="absolute inset-0 w-full h-full"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                title={title}
+              />
+            ) : (
+              <video
+                src={videoUrl}
+                className="absolute inset-0 w-full h-full object-cover"
+                controls
+                autoPlay
+                loop
+                muted
+                title={title}
+              />
+            )
           ) : null}
           <div className="absolute inset-0 pointer-events-none border border-primary/20"></div>
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/80 to-transparent"></div>
@@ -142,9 +154,11 @@ const DesignProjectCard = ({
           {/* Play Game Button for both Storm Base and Ye Guild Clerk */}
           {(title === "Storm Base" || title === "Ye Guild Clerk") && (
             <a
-              href={title === "Ye Guild Clerk" 
-                ? "https://thechunkypenguin.itch.io/ye-guild-clerk"
-                : "https://jaydumwum.itch.io/desertapocalypse"}
+              href={
+                title === "Ye Guild Clerk"
+                  ? "https://thechunkypenguin.itch.io/ye-guild-clerk"
+                  : "https://jaydumwum.itch.io/desertapocalypse"
+              }
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 text-white bg-green-600 border-green-500 py-3 font-medium text-base rounded-md shadow-md shadow-green-500/20 mb-4"
@@ -202,15 +216,29 @@ const DesignProjectCard = ({
                               loading="lazy"
                             />
                           </div>
-                        ) : screenshot.url && (
-                          <>
-                            <img
-                              src={screenshot.url}
-                              alt={`${title} screenshot ${index + 1}`}
-                              className="w-full rounded-md"
-                              loading="lazy"
-                            />
-                          </>
+                        ) : (
+                          screenshot.url && (
+                            <>
+                              {screenshot.url.endsWith(".mp4") ? (
+                                <video
+                                  src={screenshot.url}
+                                  className="w-full rounded-md"
+                                  controls
+                                  autoPlay
+                                  loop
+                                  muted
+                                  title={`${title} video ${index + 1}`}
+                                />
+                              ) : (
+                                <img
+                                  src={screenshot.url}
+                                  alt={`${title} screenshot ${index + 1}`}
+                                  className="w-full rounded-md"
+                                  loading="lazy"
+                                />
+                              )}
+                            </>
+                          )
                         )}
                         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/80 to-transparent"></div>
                       </div>
