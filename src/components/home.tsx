@@ -1,12 +1,10 @@
 import React from "react";
 import { NoiseOverlay } from "./effects/NoiseOverlay";
-import { MatrixRain } from "./effects/MatrixRain";
-import { CircuitPattern } from "./effects/CircuitPattern";
 import { ScanLines } from "./effects/ScanLines";
 import { ThreeBackground } from "./effects/ThreeBackground";
 import { motion } from "framer-motion";
 import HeroSection from "./hero/HeroSection";
-import ExperienceTimeline from "./experience/ExperienceTimeline";
+import DemoReel from "./experience/ExperienceTimeline";
 import ProjectGrid from "./projects/ProjectGrid";
 import DesignProjectsSection from "./projects/DesignProjectsSection";
 import ContactTerminal from "./contact/ContactTerminal";
@@ -19,7 +17,7 @@ interface HomeProps {
 
 const Home = ({
   developerName = "Jayden Chung",
-  developerTitle = "Full Stack Developer",
+  developerTitle = "Designer & Developer",
   avatarUrl = "/Linkedin.jpg",
 }: HomeProps) => {
   return (
@@ -30,8 +28,6 @@ const Home = ({
       transition={{ duration: 0.5 }}
     >
       <ThreeBackground color="#800080" />
-      <CircuitPattern />
-      <MatrixRain />
       <NoiseOverlay />
       <ScanLines />
       {/* Hero Section */}
@@ -43,15 +39,16 @@ const Home = ({
         />
       </section>
 
-      {/* Experience Timeline Section */}
+      {/* 2025 Demo Reel Section */}
       <motion.section
-        id="experience"
+        id="demo-reel"
+        className="relative isolate"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <ExperienceTimeline />
+        <DemoReel />
       </motion.section>
 
       {/* Design Projects Section */}

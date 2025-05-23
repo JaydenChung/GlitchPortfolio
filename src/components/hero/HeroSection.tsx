@@ -1,9 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { GlitchPortrait } from "../effects/GlitchPortrait";
 import CursorTrail from "./CursorTrail";
 import { GlitchText } from "../effects/GlitchText";
-import { CrackedScreen } from "../effects/CrackedScreen";
 
 interface HeroSectionProps {
   name?: string;
@@ -28,11 +26,6 @@ const HeroSection = ({
       {/* Glitch overlay effect */}
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,0.2)_50%,transparent_75%,transparent_100%)] pointer-events-none" />
 
-      <CrackedScreen
-        color="rgba(128, 0, 255, 0.15)"
-        opacity={0.15}
-        duration={3}
-      />
       <motion.div
         className="relative z-10 text-center"
         style={{
@@ -50,10 +43,10 @@ const HeroSection = ({
           className="mb-8"
         >
           <div className="w-48 h-48 mx-auto relative group">
-            <GlitchPortrait
+            <img
               src={avatarUrl}
               alt="Jayden Chung"
-              className="w-full h-full border-4 border-purple-500"
+              className="w-full h-full border-4 border-purple-500 rounded-full"
             />
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 group-hover:opacity-75 transition-opacity opacity-0" />
           </div>

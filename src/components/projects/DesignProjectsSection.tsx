@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import DesignProjectCard from "./DesignProjectCard";
 
 interface Screenshot {
-  url: string;
+  url?: string;
+  documentUrl?: string;
   caption: string;
 }
 
@@ -40,7 +41,7 @@ const DesignProjectsSection = ({
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          Design Projects
+          Games
         </motion.h2>
 
         <motion.div
@@ -68,32 +69,24 @@ const DesignProjectsSection = ({
 
 const defaultProjects: DesignProject[] = [
   {
-    title: "Automotive Concept Commercial",
-    description:
-      "Fullscreen 4K Reccomended",
-    videoUrl:
-      "https://player.vimeo.com/video/1066405543?loop=1",
-    technologies: ["Adobe Photoshop", "Unreal Engine", "Blender"],
+    title: "Ye Guild Clerk",
+    description: "Fullscreen 4K Reccomended",
+    videoUrl: "https://www.youtube.com/embed/CFPw8_FnCYU?loop=1",
+    technologies: ["Unity", "C#", "Game Development", "Marketing"],
     screenshots: [
       {
-        url: "/Unreal.jpg",
-        caption:
-          "Designed a photorealistic automotive environment using HDRI lighting with Lumen illumination to render automotive materials with enhanced reflections and realism.",
+        url: "/Ye Guild Clerk1.png",
+        caption: "As Lead Publisher and Market Coordinator, I spearheaded the game's market strategy and coordinated with distribution platforms to maximize visibility and engagement.",
       },
       {
-        url: "/Blender.png",
-        caption: "Imported high poly vehicle and assets from Blender. Seperated vehicle body, wheels and caliber to set up rigging and vehicle animation in UE5. Developed cinematic camera movements and dynamic lighting setups to create visually engaging sequences.",
-      },
-      {
-        url: "/Premiere.png",
-        caption: "Edited and synchronized sound effects in Adobe Premiere Pro, refining audio transitions and enhancing the immersive experience. Utilized motion blur, depth of field, and post-processing color grading to achieve a professional-grade commercial look.",
-      },
+        documentUrl: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/OugY0hKJxNxQVhJQoCAo6e/Ye-Guild-Clerk-Flow-Chart-?type=whiteboard",
+        caption: "Game flow chart and design documentation showcasing the core gameplay mechanics and systems.",
+      }
     ],
-    process:
-      "",
+    process: "",
   },
   {
-    title: "Desert Apocalypse Trailer",
+    title: "Storm Base",
     description:
       "",
     videoUrl:
@@ -102,7 +95,7 @@ const defaultProjects: DesignProject[] = [
     screenshots: [
       {
         url: "/Unity.png",
-        caption: "Directed and edited a high-impact game trailer for Desert Apocalypse, capturing the game's post-apocalyptic tone and dynamic gameplay. Designed and implemented dramatic camera movements, smooth transitions, and visual storytelling techniques to engage viewers.",
+        caption: "Directed and edited a high-impact game trailer for Storm Base, capturing the game's post-apocalyptic tone and dynamic gameplay. Designed and implemented dramatic camera movements, smooth transitions, and visual storytelling techniques to engage viewers.",
       },
       {
         url: "/Unity2.png",

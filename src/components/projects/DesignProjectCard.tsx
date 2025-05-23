@@ -10,14 +10,16 @@ import {
 } from "../ui/collapsible";
 
 interface Screenshot {
-  url: string;
+  url?: string;
+  documentUrl?: string;
   caption: string;
 }
 
 interface DesignProject {
   title: string;
   description: string;
-  videoUrl: string;
+  videoUrl?: string;
+  documentUrl?: string;
   websiteUrl?: string;
   demoUrl?: string;
   githubUrl?: string;
@@ -32,6 +34,7 @@ const DesignProjectCard = ({
   title,
   description,
   videoUrl,
+  documentUrl,
   websiteUrl,
   demoUrl,
   githubUrl,
@@ -46,17 +49,28 @@ const DesignProjectCard = ({
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-primary/10 pointer-events-none z-0"></div>
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=1200&q=80')] opacity-10 mix-blend-overlay pointer-events-none z-0"></div>
       <CardContent className="p-0 relative z-10">
-        {/* Video Trailer */}
+        {/* Video Trailer or Document */}
         <div className="relative w-full aspect-video bg-black/80 overflow-hidden border-b border-primary/30">
-          <iframe
-            src={videoUrl}
-            className="absolute inset-0 w-full h-full"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-            loading="lazy"
-            title={title}
-          />
+          {documentUrl ? (
+            <iframe
+              src={documentUrl}
+              className="absolute inset-0 w-full h-full"
+              frameBorder="0"
+              allowFullScreen
+              loading="lazy"
+              title={`${title} document`}
+            />
+          ) : videoUrl ? (
+            <iframe
+              src={videoUrl}
+              className="absolute inset-0 w-full h-full"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+              title={title}
+            />
+          ) : null}
           <div className="absolute inset-0 pointer-events-none border border-primary/20"></div>
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/80 to-transparent"></div>
           <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/80 to-transparent"></div>
@@ -125,15 +139,17 @@ const DesignProjectCard = ({
             )}
           </div>
 
-          {/* Play Game Button for Desert Apocalypse */}
-          {title === "Desert Apocalypse Trailer" && (
+          {/* Play Game Button for both Storm Base and Ye Guild Clerk */}
+          {(title === "Storm Base" || title === "Ye Guild Clerk") && (
             <a
-              href="https://jaydumwum.itch.io/desertapocalypse"
+              href={title === "Ye Guild Clerk" 
+                ? "https://thechunkypenguin.itch.io/ye-guild-clerk"
+                : "https://jaydumwum.itch.io/desertapocalypse"}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 text-white hover:text-white bg-green-600 hover:bg-green-700 border-green-500 hover:border-green-600 transition-all py-3 font-medium text-base rounded-md shadow-md shadow-green-500/20 mb-4"
             >
-              PLAY GAME
+              {title === "Ye Guild Clerk" ? "PLAY DEMO" : "PLAY GAME"}
             </a>
           )}
 
@@ -166,9 +182,6 @@ const DesignProjectCard = ({
 
               {/* Screenshots */}
               <div>
-                <h4 className="text-lg font-semibold text-primary mb-4 font-mono tracking-wide bg-primary/10 p-2 rounded border-l-4 border-primary">
-                  VISUAL DATA
-                </h4>
                 <div className="grid gap-8">
                   {screenshots.map((screenshot, index) => (
                     <motion.div
@@ -179,13 +192,27 @@ const DesignProjectCard = ({
                       transition={{ delay: index * 0.1 }}
                     >
                       <div className="relative overflow-hidden border border-primary/40 rounded-md max-w-full mx-auto">
-                        <img
-                          src={screenshot.url}
-                          alt={`${title} screenshot ${index + 1}`}
-                          className="w-full rounded-md group-hover:scale-105 transition-transform duration-500"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        {screenshot.documentUrl ? (
+                          <div className="relative w-full aspect-video">
+                            <iframe
+                              src={screenshot.documentUrl}
+                              className="absolute inset-0 w-full h-full rounded-md"
+                              frameBorder="0"
+                              allowFullScreen
+                              loading="lazy"
+                            />
+                          </div>
+                        ) : screenshot.url && (
+                          <>
+                            <img
+                              src={screenshot.url}
+                              alt={`${title} screenshot ${index + 1}`}
+                              className="w-full rounded-md group-hover:scale-105 transition-transform duration-500"
+                              loading="lazy"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          </>
+                        )}
                         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/80 to-transparent"></div>
                       </div>
                       <p className="text-sm text-cyan-200 font-mono leading-relaxed">
