@@ -28,7 +28,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <div className="w-full bg-black p-8 md:p-16">
+    <div className="w-full bg-transparent p-8 md:p-16">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -46,14 +46,14 @@ const ExperienceSection = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
             >
-              <Card className="bg-black/70 border border-primary/40 overflow-hidden backdrop-blur-sm hover:border-primary/80 transition-all duration-300 shadow-lg shadow-primary/20">
+              <Card className="bg-black/70 border border-cyan-500/40 overflow-hidden backdrop-blur-sm hover:border-cyan-500/80 transition-all duration-300 shadow-lg shadow-cyan-500/20">
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     <div className="flex justify-between items-start flex-wrap gap-2">
-                      <h3 className="text-xl font-bold text-primary">
+                      <h3 className="text-xl font-bold text-cyan-500">
                         {exp.company}
                       </h3>
-                      <span className="text-primary/80 font-mono text-sm">
+                      <span className="text-cyan-500/80 font-mono text-sm">
                         {exp.period}
                       </span>
                     </div>
@@ -62,16 +62,16 @@ const ExperienceSection = () => {
                         href={exp.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:text-primary/80 transition-colors"
+                        className="text-cyan-500 hover:text-cyan-400 transition-colors"
                       >
                         Visit Website
                       </a>
                     )}
                     <div className="flex justify-between items-start flex-wrap gap-2">
                       <p className="text-cyan-100 font-medium">{exp.role}</p>
-                      <span className="text-primary/80 text-sm">{exp.location}</span>
+                      <span className="text-cyan-500/80 text-sm">{exp.location}</span>
                     </div>
-                    <ul className="list-none space-y-2 border-l-2 border-primary/30 pl-4">
+                    <ul className="list-none space-y-2 border-l-2 border-cyan-500/30 pl-4">
                       {exp.responsibilities.map((resp, idx) => (
                         <motion.li
                           key={idx}

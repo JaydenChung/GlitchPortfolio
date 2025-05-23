@@ -31,6 +31,7 @@ const Home = ({
       <ThreeBackground color="#0891b2" />
       <NoiseOverlay />
       <ScanLines />
+      
       {/* Hero Section */}
       <section id="hero">
         <HeroSection
@@ -52,19 +53,7 @@ const Home = ({
         <DemoReel />
       </motion.section>
 
-      {/* Experience Section */}
-      <motion.section
-        id="experience"
-        className="relative isolate pb-16"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <ExperienceSection />
-      </motion.section>
-
-      {/* Design Projects Section */}
+      {/* Design Projects and Experience Section */}
       <motion.section
         id="design-projects"
         className="pt-8"
@@ -74,6 +63,9 @@ const Home = ({
         transition={{ duration: 0.5 }}
       >
         <DesignProjectsSection />
+        <div className="mt-16">
+          <ExperienceSection />
+        </div>
       </motion.section>
 
       {/* Technical Projects Grid Section */}
