@@ -70,35 +70,34 @@ const DesignProjectsSection = ({
 const defaultProjects: DesignProject[] = [
   {
     title: "Ye Guild Clerk",
-    description: "Fullscreen 4K Reccomended",
+    description: "Lead Publisher & Market Coordinator",
     videoUrl: "https://www.youtube.com/embed/CFPw8_FnCYU?loop=1",
-    technologies: ["Unity", "C#", "Game Development", "Marketing"],
+    technologies: ["Unity", "C#", "SteamWorks", "Social Media", "Figma"],
     screenshots: [
       {
         url: "/Ye Guild Clerk1.png",
-        caption: "As Lead Publisher and Market Coordinator, I spearheaded the game's market strategy and coordinated with distribution platforms to maximize visibility and engagement.",
+        caption: "I created and managed social media accounts for the game, and gathered an audiece from the ground up through trailers and prmotional videos. Responsible for overseeing the game's Steam page and approving the final build for release.", 
       },
       {
         documentUrl: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/OugY0hKJxNxQVhJQoCAo6e/Ye-Guild-Clerk-Flow-Chart-?type=whiteboard",
-        caption: "Game flow chart and design documentation showcasing the core gameplay mechanics and systems.",
+        caption: "Game flow chart and design documentation showcasing the core gameplay interactions and systems.",
       }
     ],
     process: "",
   },
   {
     title: "Storm Base",
-    description:
-      "",
+    description: "Producer",
     videoUrl:
       "https://player.vimeo.com/video/1039308803?loop=1",
-    technologies: ["Unreal Engine", "Capcut", "TikTok", "FL Studio"],
+    technologies: ["Unity", "C#", "Trello", "AdobeSuite", ],
     screenshots: [
       {
         url: "/Unity.png",
-        caption: "Directed and edited a high-impact game trailer for Storm Base, capturing the game's post-apocalyptic tone and dynamic gameplay. Designed and implemented dramatic camera movements, smooth transitions, and visual storytelling techniques to engage viewers.",
+        caption: "Conceptulized and designed a game in Unity, focusing on the core gameplay loop and mechanics. I was responsible for the overall game design and project management, ensuring that the game was created in a timely fashion and met quality standards.",
       },
       {
-        url: "/Unity2.png",
+        url: "/Storm.mp4",
         caption: "Designed and Programmed functionality in Unity and published on my itch.io page! Features unique combat and camera movement.",
       },
     ],

@@ -16,7 +16,7 @@ const DemoReel = () => {
           <div className="absolute inset-0 bg-black"></div>
           <div className="relative w-full h-full">
             <iframe
-              src="https://www.youtube.com/embed/o86zA4vOH1k"
+              src="https://player.vimeo.com/video/1086982468?loop=1"
               className="absolute inset-0 w-full h-full z-10"
               style={{ backgroundColor: "black" }}
               frameBorder="0"
