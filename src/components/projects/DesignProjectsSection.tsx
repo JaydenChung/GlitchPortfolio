@@ -36,9 +36,10 @@ const DesignProjectsSection = ({
     >
       <div className="w-full mx-auto">
         <motion.h2
-          className="text-5xl font-bold text-primary mb-12 text-center"
+          className="text-4xl font-bold text-white mb-16 text-center"
           initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
           Games

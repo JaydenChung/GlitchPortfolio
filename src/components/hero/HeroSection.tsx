@@ -46,9 +46,9 @@ const HeroSection = ({
             <img
               src={avatarUrl}
               alt="Jayden Chung"
-              className="w-full h-full border-4 border-purple-500 rounded-full"
+              className="w-full h-full border-4 border-cyan-500/30 rounded-full"
             />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 group-hover:opacity-75 transition-opacity opacity-0" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/20 to-cyan-400/20 group-hover:opacity-75 transition-opacity opacity-0" />
           </div>
         </motion.div>
 
@@ -85,7 +85,7 @@ const HeroSection = ({
               people genuinely connect with and see possibilities where others
               see limitations.{" "}
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-fuchsia-500/20 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-400/20 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
         </motion.div>
       </motion.div>

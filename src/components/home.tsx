@@ -27,7 +27,7 @@ const Home = ({
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <ThreeBackground color="#800080" />
+      <ThreeBackground color="#0891b2" />
       <NoiseOverlay />
       <ScanLines />
       {/* Hero Section */}

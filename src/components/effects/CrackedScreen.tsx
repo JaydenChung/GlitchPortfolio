@@ -8,7 +8,7 @@ interface CrackedScreenProps {
 }
 
 export const CrackedScreen = ({
-  color = "rgba(128, 0, 255, 0.15)",
+  color = "rgba(8, 145, 178, 0.15)",
   opacity = 0.15,
   duration = 3,
 }: CrackedScreenProps) => {
@@ -37,7 +37,7 @@ export const CrackedScreen = ({
         />
         <motion.path
           d="M1200 0 L1300 200 L1400 100 L1500 300"
-          stroke="rgba(255, 0, 255, 0.2)"
+          stroke="rgba(8, 145, 178, 0.2)"
           strokeWidth="2"
           fill="none"
           filter="url(#crack-effect)"

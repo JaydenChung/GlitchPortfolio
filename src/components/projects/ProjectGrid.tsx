@@ -24,7 +24,7 @@ const ProjectGrid = ({ projects = defaultProjects }: ProjectGridProps) => {
     >
       <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-4xl font-bold text-primary mb-16 text-center"
+          className="text-4xl font-bold text-white mb-16 text-center"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -65,7 +65,6 @@ const defaultProjects: Project[] = [
     title: "SlugLove - Secret Prize Winner #2 🎁",
     imageUrl: "/SLugLove.png",
     websiteUrl: "https://sluglove.netlify.app/",
-    githubUrl: "https://github.com/jaydumwum/SlugLove",
     devpostUrl: "https://devpost.com/software/sluglove",
   },
 ];

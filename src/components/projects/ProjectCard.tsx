@@ -35,12 +35,12 @@ const ProjectCard = ({
         className="space-y-4"
       >
         <motion.h3
-          className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-fuchsia-400"
+          className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-cyan-200"
           animate={{
             textShadow: [
-              "0 0 20px rgba(147, 51, 234, 0)",
-              "0 0 20px rgba(147, 51, 234, 0.3)",
-              "0 0 20px rgba(147, 51, 234, 0)",
+              "0 0 20px rgba(8, 145, 178, 0)",
+              "0 0 20px rgba(8, 145, 178, 0.3)",
+              "0 0 20px rgba(8, 145, 178, 0)",
             ],
           }}
           transition={{
@@ -66,7 +66,7 @@ const ProjectCard = ({
           <div className="flex justify-center mt-4">
             <Button
               variant="outline"
-              className="border-purple-500 text-purple-300"
+              className="border-cyan-500 text-cyan-300"
               onClick={() => window.open(githubUrl, "_blank")}
             >
               <Github className="w-4 h-4 mr-2" />

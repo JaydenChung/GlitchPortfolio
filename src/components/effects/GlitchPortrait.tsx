@@ -57,7 +57,7 @@ export const GlitchPortrait = ({
         className="absolute inset-0 rounded-full"
         style={{
           background:
-            "linear-gradient(45deg, rgba(128,0,255,0.5), rgba(255,0,255,0.5))",
+            "linear-gradient(45deg, rgba(8, 145, 178, 0.5), rgba(34, 211, 238, 0.5))",
           clipPath: "polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)",
           filter: "blur(8px)",
           opacity: 0.5,
@@ -80,7 +80,7 @@ export const GlitchPortrait = ({
         }}
       >
         <motion.div
-          className="w-full h-[2px] bg-purple-500/50"
+          className="w-full h-[2px] bg-cyan-500/50"
           animate={{
             y: ["-100%", "200%"],
           }}

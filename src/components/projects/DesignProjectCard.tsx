@@ -91,7 +91,7 @@ const DesignProjectCard = ({
         {/* Project Info */}
         <div className="p-6 relative">
           <motion.h3
-            className="text-2xl font-bold text-primary mb-3 tracking-wide"
+            className="text-2xl font-bold text-white mb-3 tracking-wide"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
