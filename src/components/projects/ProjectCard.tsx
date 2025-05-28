@@ -62,8 +62,8 @@ const ProjectCard = ({
           />
         </motion.div>
 
-        {githubUrl && (
-          <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-4 gap-4">
+          {githubUrl && (
             <Button
               variant="outline"
               className="border-cyan-500 text-cyan-300"
@@ -72,8 +72,18 @@ const ProjectCard = ({
               <Github className="w-4 h-4 mr-2" />
               View Code
             </Button>
-          </div>
-        )}
+          )}
+
+          {websiteUrl && (
+            <Button
+              variant="outline"
+              className="border-cyan-500 text-cyan-300"
+              onClick={() => window.open(websiteUrl, "_blank")}
+            >
+              Visit Site
+            </Button>
+          )}
+        </div>
       </motion.div>
     </div>
   );

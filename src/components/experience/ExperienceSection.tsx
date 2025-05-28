@@ -22,7 +22,20 @@ const ExperienceSection = () => {
       responsibilities: [
         "Acted as a liaison between software engineering and legal teams to design document automation tools that streamlined case templates and improved workflow efficiency",
         "Optimized Tenants Lawfirm's website structure and content for SEO, enhancing keyword targeting and improving search engine visibility",
-        "Leveraged Google Analytics to increase website traffic and conduct competitive analysis for page orientation adjustments."
+        "Leveraged Google Analytics to increase website traffic and conduct competitive analysis for page orientation adjustments.",
+      ],
+    },
+    {
+      company: "Game Design & Art Collaboration (GDA) – UCSC",
+      role: "Mock Studio",
+      period: "Fall 2024 – Spring 2025",
+      location: "Santa Cruz, CA",
+      website: "https://gdacollab.com/",
+      responsibilities: [
+        "Worked in GDA's mock studio, a year-long simulation of a professional environment, modeled after real industry pipelines",
+        "Collaborated with a wide range of departments to take a product from conception to completion, ensuring alignment across design, technical, and narrative goals",
+        "Created design docs and AI integration of Well Witches, GDA's game of 2025",
+        "Gained hands-on experience as a designer in a large development team, while coordinating task delegation and milestone tracking",
       ],
     },
   ];
@@ -58,7 +71,7 @@ const ExperienceSection = () => {
                       </span>
                     </div>
                     {exp.website && (
-                      <a 
+                      <a
                         href={exp.website}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -69,7 +82,9 @@ const ExperienceSection = () => {
                     )}
                     <div className="flex justify-between items-start flex-wrap gap-2">
                       <p className="text-cyan-100 font-medium">{exp.role}</p>
-                      <span className="text-cyan-500/80 text-sm">{exp.location}</span>
+                      <span className="text-cyan-500/80 text-sm">
+                        {exp.location}
+                      </span>
                     </div>
                     <ul className="list-none space-y-2 border-l-2 border-cyan-500/30 pl-4">
                       {exp.responsibilities.map((resp, idx) => (
