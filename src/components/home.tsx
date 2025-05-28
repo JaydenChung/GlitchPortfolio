@@ -53,7 +53,19 @@ const Home = ({
         <DemoReel />
       </motion.section>
 
-      {/* Design Projects and Experience Section */}
+      {/* Experience Section */}
+      <motion.section
+        id="experience"
+        className="pt-8"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <ExperienceSection />
+      </motion.section>
+
+      {/* Design Projects Section */}
       <motion.section
         id="design-projects"
         className="pt-8"
@@ -63,9 +75,6 @@ const Home = ({
         transition={{ duration: 0.5 }}
       >
         <DesignProjectsSection />
-        <div className="mt-16">
-          <ExperienceSection />
-        </div>
       </motion.section>
 
       {/* Technical Projects Grid Section */}

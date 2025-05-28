@@ -74,12 +74,12 @@ const defaultProjects: DesignProject[] = [
     title: "Ye Guild Clerk",
     description: "Lead Publisher & Market Coordinator",
     videoUrl: "https://www.youtube.com/embed/CFPw8_FnCYU?loop=1",
-    technologies: ["Unity", "C#", "SteamWorks", "Social Media", "Figma"],
+    technologies: ["Unity", "C#", "SteamWorks", "Social Media", "Figma, Notion, SproutSocial", "Data Analytics"],
     screenshots: [
       {
         url: "/Ye Guild Clerk1.png",
         caption:
-          "Led the publishing process on Steam, managing final build approvals and release timeline. Ensured succesful onboarding and compliance with Valve's technical and legal standards. Coordinated game builds, overswa deployment workflows, and designed the store page; optimizing page layout, descriptions, and promotional assets.",
+          "Led the publishing process on Steam, managing final build approvals and release timeline. Ensured succesful onboarding and compliance with Valve's technical and legal standards. Coordinated game builds, oversaw deployment workflows, and designed the store page; optimizing page layout, descriptions, and promotional assets.",
       },
       {
         documentUrl:

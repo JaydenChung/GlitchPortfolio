@@ -218,60 +218,25 @@ const DesignProjectCard = ({
                             />
                           </div>
                         ) : screenshot.url && screenshot.additionalImages ? (
-                          <div className="relative px-6 py-4">
-                            <div className="grid grid-cols-3 gap-4">
-                              <div className="relative aspect-video group/image cursor-pointer hover:z-20">
+                          <div className="grid grid-cols-3 gap-4 p-4">
+                            {[screenshot.url, ...screenshot.additionalImages].map((imgUrl, imgIndex) => (
+                              <div key={imgIndex} className="relative aspect-video group/image cursor-pointer hover:z-20">
                                 <img
-                                  src={screenshot.url}
-                                  alt={`${title} graph 1`}
+                                  src={imgUrl}
+                                  alt={`${title} graph ${imgIndex + 1}`}
                                   className="w-full h-full object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-150 bg-black/40"
                                   loading="lazy"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                                <div className="absolute bottom-0 left-0 right-0 p-2 text-xs text-cyan-200 font-mono opacity-0 group-hover/image:opacity-100 transition-opacity duration-300">
-                                  User Engagement Metrics
-                                </div>
                               </div>
-                              {screenshot.additionalImages.map((imgUrl, imgIndex) => (
-                                <div key={imgIndex} className="relative aspect-video group/image cursor-pointer hover:z-20">
-                                  <img
-                                    src={imgUrl}
-                                    alt={`${title} graph ${imgIndex + 2}`}
-                                    className="w-full h-full object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-150 bg-black/40"
-                                    loading="lazy"
-                                  />
-                                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                                  <div className="absolute bottom-0 left-0 right-0 p-2 text-xs text-cyan-200 font-mono opacity-0 group-hover/image:opacity-100 transition-opacity duration-300">
-                                    {imgIndex === 0 ? "Daily Active Users" : "Revenue Trends"}
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                            <p className="text-sm text-cyan-200 font-mono leading-relaxed mt-3">
-                              &gt; {screenshot.caption}
-                            </p>
+                            ))}
                           </div>
                         ) : screenshot.url && (
-                          <>
-                            {screenshot.url.endsWith(".mp4") ? (
-                              <video
-                                src={screenshot.url}
-                                className="w-full rounded-md"
-                                controls
-                                autoPlay
-                                loop
-                                muted
-                                title={`${title} video ${index + 1}`}
-                              />
-                            ) : (
-                              <img
-                                src={screenshot.url}
-                                alt={`${title} screenshot ${index + 1}`}
-                                className="w-full rounded-md"
-                                loading="lazy"
-                              />
-                            )}
-                          </>
+                          <img
+                            src={screenshot.url}
+                            alt={`${title} screenshot`}
+                            className="w-full rounded-md"
+                            loading="lazy"
+                          />
                         )}
                         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/80 to-transparent"></div>
                       </div>
