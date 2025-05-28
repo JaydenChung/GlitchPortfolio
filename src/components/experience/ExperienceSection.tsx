@@ -20,9 +20,9 @@ const ExperienceSection = () => {
       location: "Beverley Hills, CA",
       website: "https://www.tenantslawfirm.com/",
       responsibilities: [
-        "Bridged communication between Software engineering and legal interns to deliver effective document automation solutions",
-        "Improved Tenants Lawfirm website SEO by optimizing content structure and keyword usage",
-        "Leveraged Google Analytics to increase website traffic and conduct competitive analysis"
+        "Acted as a liaison between software engineering and legal teams to design document automation tools that streamlined case templates and improved workflow efficiency",
+        "Optimized Tenants Lawfirm's website structure and content for SEO, enhancing keyword targeting and improving search engine visibility",
+        "Leveraged Google Analytics to increase website traffic and conduct competitive analysis for page orientation adjustments."
       ],
     },
   ];
