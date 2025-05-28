@@ -31,6 +31,13 @@ interface DesignProject {
 
 interface DesignProjectCardProps extends DesignProject {}
 
+const getGraphTooltip = (imgUrl: string): string => {
+  if (imgUrl.includes("graph1")) return "YouTube Views March 1st-March 28th";
+  if (imgUrl.includes("graph2")) return "Steam Wishlists and Impressions";
+  if (imgUrl.includes("graph3")) return "Social Media Dashboard & Management";
+  return "";
+};
+
 const DesignProjectCard = ({
   title,
   description,
@@ -218,15 +225,20 @@ const DesignProjectCard = ({
                             />
                           </div>
                         ) : screenshot.url && screenshot.additionalImages ? (
-                          <div className="grid grid-cols-3 gap-4 p-4">
+                          <div className="grid grid-cols-3 gap-6 p-6">
                             {[screenshot.url, ...screenshot.additionalImages].map((imgUrl, imgIndex) => (
-                              <div key={imgIndex} className="relative aspect-video group/image cursor-pointer hover:z-20">
+                              <div key={imgIndex} className="relative aspect-[4/3] group/image cursor-pointer hover:z-20">
                                 <img
                                   src={imgUrl}
                                   alt={`${title} graph ${imgIndex + 1}`}
                                   className="w-full h-full object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-150 bg-black/40"
                                   loading="lazy"
                                 />
+                                {imgUrl.includes("graph") && (
+                                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/image:opacity-100 transition-opacity duration-200 bg-black/90 text-cyan-300 px-3 py-1 rounded-md text-sm whitespace-nowrap">
+                                    {getGraphTooltip(imgUrl)}
+                                  </div>
+                                )}
                               </div>
                             ))}
                           </div>

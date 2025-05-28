@@ -91,7 +91,7 @@ const defaultProjects: DesignProject[] = [
         url: "/graph1.png",
         additionalImages: ["/graph2.png", "/graph3.png"],
         caption:
-          "Impressions analytics. Create prmotional content including trailers and short-form videoes. Created media dashboard to track engagment and schedule posts and track deadlines for other social media teamates.",
+          "Impressions analytics. Create prmotional content including trailers and short-form videoes. Created media dashboard to track engagment, schedule posts and track deadlines for other social media teamates.",
       },
     ],
     process: "",
