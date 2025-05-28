@@ -34,7 +34,7 @@ interface DesignProjectCardProps extends DesignProject {}
 const getGraphTooltip = (imgUrl: string): string => {
   if (imgUrl.includes("graph1")) return "YouTube Analytics March 1st-March 28th";
   if (imgUrl.includes("graph2")) return "Steam Wishlists and Impressions";
-  if (imgUrl.includes("graph3")) return "Draft & Management";
+  if (imgUrl.includes("graph3")) return "Notion Draft & Management";
   if (imgUrl.includes("graph4")) return "SocialSprout Media Dashboard";
   return "";
 };
