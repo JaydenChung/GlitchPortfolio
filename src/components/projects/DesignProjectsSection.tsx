@@ -6,6 +6,7 @@ interface Screenshot {
   url?: string;
   documentUrl?: string;
   caption: string;
+  additionalImages?: string[];
 }
 
 interface DesignProject {
@@ -78,13 +79,19 @@ const defaultProjects: DesignProject[] = [
       {
         url: "/Ye Guild Clerk1.png",
         caption:
-          "I created and managed social media accounts for the game, and gathered an audiece from the ground up through trailers and prmotional videos. Responsible for overseeing the game's Steam page and approving the final build for release.",
+          "Led the publishing process on Steam, managing final build approvals and release timeline. Ensured succesful onboarding and compliance with Valve's technical and legal standards. Coordinated game builds, overswa deployment workflows, and designed the store page; optimizing page layout, descriptions, and promotional assets.",
       },
       {
         documentUrl:
           "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/OugY0hKJxNxQVhJQoCAo6e/Ye-Guild-Clerk-Flow-Chart-?type=whiteboard",
         caption:
-          "Game flow chart and design documentation showcasing the core gameplay interactions and systems.",
+          "Demonstrated strong system documentation and design workflows by creating flow charts in Figma. This visual documentation helped streamline team communication, and showcase my ability to break down complex systems into clear components for teammates to follow.",
+      },
+      {
+        url: "/graph1.png",
+        additionalImages: ["/graph2.png", "/graph3.png"],
+        caption:
+          "Impressions analytics. Create prmotional content including trailers and short-form videoes. Created media dashboard to track engagment and schedule posts and track deadlines for other social media teamates.",
       },
     ],
     process: "",
