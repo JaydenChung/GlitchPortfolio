@@ -51,6 +51,21 @@ const DesignProjectCard = ({
   process,
 }: DesignProjectCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleCollapsibleChange = (open: boolean) => {
+    if (open) {
+      // Store current scroll position when opening
+      setScrollPosition(window.scrollY);
+    } else {
+      // Restore scroll position when closing
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: "instant",
+      });
+    }
+    setIsOpen(open);
+  };
 
   return (
     <Card className="w-full bg-black/70 border border-primary/40 rounded-lg overflow-hidden backdrop-blur-sm hover:border-primary/80 transition-all duration-300 shadow-lg shadow-primary/30 relative">
@@ -178,7 +193,7 @@ const DesignProjectCard = ({
           {/* Improved Collapsible Screenshots and Process */}
           <Collapsible
             open={isOpen}
-            onOpenChange={setIsOpen}
+            onOpenChange={handleCollapsibleChange}
             className="w-full border-t border-primary/30 pt-4"
           >
             <CollapsibleTrigger asChild>
@@ -191,72 +206,121 @@ const DesignProjectCard = ({
                 {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
               </Button>
             </CollapsibleTrigger>
-            <CollapsibleContent className="pt-6 animate-in fade-in-50 duration-300">
-              {/* Process Description */}
-              {process && (
-                <div className="mb-6">
-                  <h4 className="text-base font-semibold text-primary mb-3 font-mono tracking-wide"></h4>
-                  <p className="text-cyan-100 text-base leading-relaxed border-l-2 border-primary/30 pl-4">
-                    {process}
-                  </p>
-                </div>
-              )}
+            <CollapsibleContent className="overflow-hidden">
+              <div className="pt-6 animate-in fade-in-50 duration-300 relative">
+                {/* Process Description */}
+                {process && (
+                  <div className="mb-6">
+                    <h4 className="text-base font-semibold text-primary mb-3 font-mono tracking-wide"></h4>
+                    <p className="text-cyan-100 text-base leading-relaxed border-l-2 border-primary/30 pl-4">
+                      {process}
+                    </p>
+                  </div>
+                )}
 
-              {/* Screenshots */}
-              <div>
-                <div className="grid gap-8">
-                  {screenshots.map((screenshot, index) => (
-                    <motion.div
-                      key={index}
-                      className="space-y-3 relative group"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <div className="relative overflow-hidden border border-primary/40 rounded-md max-w-full mx-auto">
-                        {screenshot.documentUrl ? (
-                          <div className="relative w-full aspect-video">
-                            <iframe
-                              src={screenshot.documentUrl}
-                              className="absolute inset-0 w-full h-full rounded-md"
-                              frameBorder="0"
-                              allowFullScreen
+                {/* Screenshots */}
+                <div>
+                  <div className="grid gap-8">
+                    {screenshots.map((screenshot, index) => (
+                      <motion.div
+                        key={index}
+                        className="space-y-3 relative group"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <div className="relative overflow-hidden border border-primary/40 rounded-md max-w-full mx-auto">
+                          {screenshot.documentUrl ? (
+                            <div className="relative w-full aspect-video">
+                              <iframe
+                                src={screenshot.documentUrl}
+                                className="absolute inset-0 w-full h-full rounded-md"
+                                frameBorder="0"
+                                allowFullScreen
+                                loading="lazy"
+                              />
+                            </div>
+                          ) : screenshot.url && screenshot.additionalImages ? (
+                            <div className="flex flex-col gap-4 py-6">
+                              {/* Main large graph container */}
+                              <div className="w-full aspect-[16/9] relative">
+                                {[screenshot.url, ...screenshot.additionalImages].map((imgUrl, imgIndex) => (
+                                  <img
+                                    key={imgIndex}
+                                    src={imgUrl}
+                                    alt={`${title} graph ${imgIndex + 1}`}
+                                    className={`w-full h-full object-contain rounded-lg shadow-xl transition-all duration-500 absolute top-0 left-0 
+                                      ${imgIndex === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                                    id={`main-graph-${imgIndex}`}
+                                    loading="lazy"
+                                  />
+                                ))}
+                              </div>
+                              
+                              {/* Smaller graphs container */}
+                              <div className="flex gap-4 justify-center">
+                                {[screenshot.url, ...screenshot.additionalImages].map((imgUrl, imgIndex) => (
+                                  <div 
+                                    key={imgIndex}
+                                    className="relative group/image cursor-pointer w-48 aspect-video"
+                                    onMouseEnter={() => {
+                                      const mainGraphs = document.querySelectorAll('[id^="main-graph-"]');
+                                      mainGraphs.forEach((graph, idx) => {
+                                        if (idx === imgIndex) {
+                                          graph.classList.remove('opacity-0', 'z-0');
+                                          graph.classList.add('opacity-100', 'z-10');
+                                        } else {
+                                          graph.classList.remove('opacity-100', 'z-10');
+                                          graph.classList.add('opacity-0', 'z-0');
+                                        }
+                                      });
+                                    }}
+                                  >
+                                    <img
+                                      src={imgUrl}
+                                      alt={`${title} graph ${imgIndex + 1} thumbnail`}
+                                      className="w-full h-full object-cover rounded-lg shadow-lg transition-transform duration-300 hover:ring-2 hover:ring-primary/60"
+                                      loading="lazy"
+                                    />
+                                    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/image:opacity-100 transition-opacity duration-200 bg-black/90 text-cyan-300 px-3 py-1 rounded-md text-sm whitespace-nowrap">
+                                      {getGraphTooltip(imgUrl)}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ) : screenshot.url && (
+                            <img
+                              src={screenshot.url}
+                              alt={`${title} screenshot`}
+                              className="w-full rounded-md"
                               loading="lazy"
                             />
-                          </div>
-                        ) : screenshot.url && screenshot.additionalImages ? (
-                          <div className="grid grid-cols-3 gap-6 p-6">
-                            {[screenshot.url, ...screenshot.additionalImages].map((imgUrl, imgIndex) => (
-                              <div key={imgIndex} className="relative aspect-[4/3] group/image cursor-pointer hover:z-20">
-                                <img
-                                  src={imgUrl}
-                                  alt={`${title} graph ${imgIndex + 1}`}
-                                  className="w-full h-full object-contain rounded-lg shadow-lg transition-all duration-300 hover:scale-150 bg-black/40"
-                                  loading="lazy"
-                                />
-                                {imgUrl.includes("graph") && (
-                                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/image:opacity-100 transition-opacity duration-200 bg-black/90 text-cyan-300 px-3 py-1 rounded-md text-sm whitespace-nowrap">
-                                    {getGraphTooltip(imgUrl)}
-                                  </div>
-                                )}
-                              </div>
-                            ))}
-                          </div>
-                        ) : screenshot.url && (
-                          <img
-                            src={screenshot.url}
-                            alt={`${title} screenshot`}
-                            className="w-full rounded-md"
-                            loading="lazy"
-                          />
-                        )}
-                        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/80 to-transparent"></div>
-                      </div>
-                      <p className="text-sm text-cyan-200 font-mono leading-relaxed">
-                        &gt; {screenshot.caption}
-                      </p>
-                    </motion.div>
-                  ))}
+                          )}
+                          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/80 to-transparent"></div>
+                        </div>
+                        <p className="text-sm text-cyan-200 font-mono leading-relaxed">
+                          &gt; {screenshot.caption}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Floating collapse button */}
+                <div className="sticky bottom-4 flex justify-center mt-6">
+                  <CollapsibleTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full bg-black/80 border-cyan-500/20 shadow-sm shadow-cyan-500/10 backdrop-blur-sm 
+                        hover:bg-cyan-950/30 hover:border-cyan-400/50 hover:scale-105
+                        hover:shadow-[0_0_15px_2px] hover:shadow-cyan-500/30
+                        transition-all duration-300 ease-out relative overflow-visible"
+                    >
+                      <ChevronUp size={20} className="text-cyan-400/80 hover:text-cyan-300" />
+                    </Button>
+                  </CollapsibleTrigger>
                 </div>
               </div>
             </CollapsibleContent>
