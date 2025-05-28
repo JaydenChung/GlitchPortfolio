@@ -244,34 +244,55 @@ const DesignProjectCard = ({
                             <div className="flex flex-col gap-4 py-6">
                               {/* Main large graph container */}
                               <div className="w-full aspect-[16/9] relative">
-                                {[screenshot.url, ...screenshot.additionalImages].map((imgUrl, imgIndex) => (
+                                {[
+                                  screenshot.url,
+                                  ...screenshot.additionalImages,
+                                ].map((imgUrl, imgIndex) => (
                                   <img
                                     key={imgIndex}
                                     src={imgUrl}
                                     alt={`${title} graph ${imgIndex + 1}`}
                                     className={`w-full h-full object-contain rounded-lg shadow-xl transition-all duration-500 absolute top-0 left-0 
-                                      ${imgIndex === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                                      ${imgIndex === 0 ? "opacity-100 z-10" : "opacity-0 z-0"}`}
                                     id={`main-graph-${imgIndex}`}
                                     loading="lazy"
                                   />
                                 ))}
                               </div>
-                              
+
                               {/* Smaller graphs container */}
                               <div className="flex gap-4 justify-center">
-                                {[screenshot.url, ...screenshot.additionalImages].map((imgUrl, imgIndex) => (
-                                  <div 
+                                {[
+                                  screenshot.url,
+                                  ...screenshot.additionalImages,
+                                ].map((imgUrl, imgIndex) => (
+                                  <div
                                     key={imgIndex}
                                     className="relative group/image cursor-pointer w-48 aspect-video"
                                     onMouseEnter={() => {
-                                      const mainGraphs = document.querySelectorAll('[id^="main-graph-"]');
+                                      const mainGraphs =
+                                        document.querySelectorAll(
+                                          '[id^="main-graph-"]',
+                                        );
                                       mainGraphs.forEach((graph, idx) => {
                                         if (idx === imgIndex) {
-                                          graph.classList.remove('opacity-0', 'z-0');
-                                          graph.classList.add('opacity-100', 'z-10');
+                                          graph.classList.remove(
+                                            "opacity-0",
+                                            "z-0",
+                                          );
+                                          graph.classList.add(
+                                            "opacity-100",
+                                            "z-10",
+                                          );
                                         } else {
-                                          graph.classList.remove('opacity-100', 'z-10');
-                                          graph.classList.add('opacity-0', 'z-0');
+                                          graph.classList.remove(
+                                            "opacity-100",
+                                            "z-10",
+                                          );
+                                          graph.classList.add(
+                                            "opacity-0",
+                                            "z-0",
+                                          );
                                         }
                                       });
                                     }}
@@ -289,13 +310,26 @@ const DesignProjectCard = ({
                                 ))}
                               </div>
                             </div>
-                          ) : screenshot.url && (
-                            <img
+                          ) : screenshot.url &&
+                            screenshot.url.endsWith(".mp4") ? (
+                            <video
                               src={screenshot.url}
-                              alt={`${title} screenshot`}
                               className="w-full rounded-md"
-                              loading="lazy"
+                              controls
+                              autoPlay={false}
+                              loop
+                              muted={false}
+                              playsInline
                             />
+                          ) : (
+                            screenshot.url && (
+                              <img
+                                src={screenshot.url}
+                                alt={`${title} screenshot`}
+                                className="w-full rounded-md"
+                                loading="lazy"
+                              />
+                            )
                           )}
                           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/80 to-transparent"></div>
                         </div>
@@ -318,7 +352,10 @@ const DesignProjectCard = ({
                         hover:shadow-[0_0_15px_2px] hover:shadow-cyan-500/30
                         transition-all duration-300 ease-out relative overflow-visible"
                     >
-                      <ChevronUp size={20} className="text-cyan-400/80 hover:text-cyan-300" />
+                      <ChevronUp
+                        size={20}
+                        className="text-cyan-400/80 hover:text-cyan-300"
+                      />
                     </Button>
                   </CollapsibleTrigger>
                 </div>
